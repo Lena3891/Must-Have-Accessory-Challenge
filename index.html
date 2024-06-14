@@ -14,12 +14,11 @@
             padding: 0;
             background-color: #f7f7f7;
             color: #333;
+            font-size: 16px; 
         }
-        
-        /* Navigation */
+
         nav {
-            background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
-            color: white;
+            background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 1em;
             display: flex;
@@ -34,16 +33,18 @@
             transition: color 0.3s ease;
         }
         nav a:hover {
-            color: #d2abd9;
+            color: #e5c9ea;
         }
-        
-        /* Hero Section */
+
+       h1 {
+            font-size: 3em; 
+        }
         .hero {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin: 2em auto;
-            max-width: 1200px;
+            max-width: 900px;
             padding: 0 2em;
         }
         .hero-image {
@@ -69,8 +70,7 @@
             line-height: 1.5;
             margin-bottom: 1.5em;
         }
-        
-     
+
         .cta {
             text-align: center;
             margin-top: 2em;
@@ -87,10 +87,9 @@
             transition: background-color 0.3s ease;
         }
         .cta button:hover {
-            background-color: #d2abd9;
+            background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));;
         }
-        
-    
+
         .features {
             background-color: #fff;
             padding: 4em 2em;
@@ -108,7 +107,7 @@
             justify-content: center;
         }
         .features li {
-            background-color: #d2abd9;
+            background-color: #b99fb6;
             margin: 1em;
             padding: 2em;
             border-radius: 10px;
@@ -120,13 +119,57 @@
             font-size: 1.2em;
             margin-bottom: 0.5em;
         }
-        
-        
+
         footer {
             background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));;
             color: #fff;
             padding: 2em;
             text-align: center;
+        }
+
+    
+        @media (max-width: 899px) {
+            body {
+                font-size: 14px; 
+            h1 {
+                font-size: 2.5em; 
+            }
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav a {
+                margin: 0.5em 0;
+            }
+            .hero {
+                flex-direction: column;
+                padding: 0;
+            }
+            .hero-image {
+                margin-bottom: 2em;
+            }
+            .hero-content {
+                padding: 0 2em;
+            }
+            .hero-content h1 {
+                font-size: 2em; 
+            }
+            .hero-content p {
+                font-size: 1em; 
+            }
+            .features ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .features li {
+                max-width: 100%;
+            }
+            .features h2 {
+                font-size: 1.5em; 
+            }
+            .features li h3 {
+                font-size: 1em; /* Kleinere Überschrift für kleinere Bildschirme */
+            }
         }
     </style>
 </head>
@@ -176,7 +219,7 @@
     </div>
     
     <footer>
-        <p>&copy; 2023 AirPods. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2024 Magdalena Zyglewicz. Alle Rechte vorbehalten.</p>
     </footer>
 </body>
 </html>
