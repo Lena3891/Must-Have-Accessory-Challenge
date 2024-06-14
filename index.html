@@ -18,12 +18,13 @@
         }
 
         nav {
-            background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));;
+            background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 1em;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
         nav a {
             color: white;
@@ -35,6 +36,44 @@
         nav a:hover {
             color: #e5c9ea;
         }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            
+        }
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background: #333;
+            margin-bottom: 4px;
+            border-radius: 5px;
+        }
+        #menuToggle {
+            display: none;
+        }
+        #menuToggle:checked + .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        #menuToggle:checked + .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+        #menuToggle:checked + .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        #menuToggle:checked ~ .nav-menu {
+            display: flex;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        .nav-menu li {
+            margin: 0 1em;
+        }
+        
+
 
        h1 {
             font-size: 3em; 
@@ -142,6 +181,42 @@
             nav a {
                 margin: 0.5em 0;
             }
+            .hamburger {
+                display: flex;
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                padding: 1em 0;
+            }
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                padding: 1em 0;
+            }
+            .nav-menu li a {
+                color: #d861d4; /* Farbe des Textes im ausgeklappten Menü */
+                text-decoration: none;
+                display: block;
+                width: 100%;
+            }
+            .nav-menu li a:hover {
+                color: #005bb5; /* Farbe des Textes beim Hover im ausgeklappten Menü */
+            }
+           
+              
             .hero {
                 flex-direction: column;
                 padding: 0;
@@ -178,13 +253,20 @@
     </style>
 </head>
 <body>
-    <nav>
+     <nav>
         <a href="#">AirPods</a>
-        <div>
-            <a href="#">Funktionen</a>
-            <a href="#">Zubehör</a>
-            <a href="#">Support</a>
-        </div>
+        <input type="checkbox" id="menuToggle">
+        <label class="hamburger" for="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Funktionen</a></li>
+            <li><a href="#">Zubehör</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
     </nav>
     
     <div class="hero">
